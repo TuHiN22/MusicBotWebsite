@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+body {
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+body.light {
+	background-color: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+	color: #000;
+}
+
+body.dark {
+	background-color: linear-gradient(to bottom, transparent, rgb(var(0, 0, 0))) rgb(var(0, 0, 50));
+	color: #fff;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* New CSS for bot interface */
+.bot-container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: #f9f9f9;
+}
+
+.bot-header {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.bot-message {
+	background-color: #e0e0e0;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.bot-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 1rem;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.bot-button:hover {
+	background-color: #0056b3;
+}
+
+/* CSS for Login Page */
+.login-container {
+	max-width: 400px;
+	margin: 100px auto;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+}
+
+.login-header {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.login-button {
+	width: 100%;
+	padding: 10px;
+	font-size: 1rem;
+	color: #fff;
+	background-color: #28a745;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+	background-color: #218838;
+}
+
+/* CSS for Dashboard */
+.dashboard-container {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #f1f1f1;
+}
+
+.dashboard-header {
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.dashboard-content {
+	padding: 15px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
