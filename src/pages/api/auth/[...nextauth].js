@@ -13,6 +13,22 @@ export default NextAuth({
 			authorization: { params: { scope: scopes } },
 		}),
 	],
-
-	// Optional: Add custom pages, callbacks, etc.
+	callbacks: {
+		async signIn() {
+			return true;
+		},
+		async redirect({ baseUrl }) {
+			return baseUrl;
+		},
+		async session({ session, token }) {
+			session.discriminator = token.discriminator;
+			session.id = token.id;
+			session.accessToken = token.accessToken;
+			return session;
+		},
+	},
+	secret: process.env.JWT_SECRET,
+	session: {
+		maxAge: 2 * 24 * 60 * 60,
+	},
 });

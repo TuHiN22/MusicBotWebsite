@@ -1,6 +1,7 @@
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import styles from "../styles/Home.module.css"; // Thêm import cho CSS
 
 export default function Home() {
 	const { data: session, status } = useSession();
@@ -15,17 +16,22 @@ export default function Home() {
 
 	// Trong khi kiểm tra session, có thể hiển thị loading hoặc placeholder
 	if (status === "loading") {
-		return <div>Loading...</div>;
+		return <div className={styles.loading}>Loading...</div>;
 	}
 
 	return (
-		<div>
-			{session ?
-				<>
-					<h1>Welcome, {session.user.name}</h1>
-					<button onClick={() => signOut()}>Sign Out</button>
-				</>
-			:	<p>Redirecting to login...</p>}
+		<div className={styles.container}>
+			{session ? (
+				<div className={styles.content}>
+					<h1 className={styles.welcome}>Welcome, {session.user.name}</h1>
+					<img src={session.user.image} alt="avatar" className={styles.avatar} />
+					<button className={styles.signOutButton} onClick={() => signOut()}>
+						Sign Out
+					</button>
+				</div>
+			) : (
+				<p>Redirecting to login...</p>
+			)}
 		</div>
 	);
 }
