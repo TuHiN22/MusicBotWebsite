@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-import User from "@/models/User";
 import connectToDatabase from "@/lib/mongodb";
+import mongoose from "mongoose";
 
 const scopes = ["identify", "guilds"].join(" ");
 
@@ -14,7 +14,8 @@ export default NextAuth({
 		}),
 	],
 	callbacks: {
-		async signIn() {
+		async signIn({ user, account, profile }) {
+			user.id = profile.id;
 			return true;
 		},
 		async redirect({ baseUrl }) {
@@ -24,7 +25,17 @@ export default NextAuth({
 			session.discriminator = token.discriminator;
 			session.id = token.id;
 			session.accessToken = token.accessToken;
+			session.user.id = token.id;
 			return session;
+		},
+		async jwt({ token, user, account, profile }) {
+			if (mongoose.connection.readyState === 0) await connectToDatabase();
+			if (profile) {
+				token.discriminator = profile.discriminator;
+				token.id = profile.id;
+				token.accessToken = account.access_token;
+			}
+			return token;
 		},
 	},
 	secret: process.env.JWT_SECRET,
