@@ -23,7 +23,7 @@ export default function Home() {
 
 	// Trong khi kiểm tra session, có thể hiển thị loading hoặc placeholder
 	if (status === "loading") {
-		return <div className={styles.loading}>Loading...</div>;
+		return <div className={styles.loader}>Loading...</div>;
 	}
 
 	const handleUpdate = async () => {
@@ -40,7 +40,7 @@ export default function Home() {
 		<div className={styles.container}>
 			{session && userData ?
 				<div className={styles.content}>
-					<h1 className={styles.welcome}>Welcome, {session.user.name}</h1>
+					<h1 className={styles.welcome}>Welcome back, {session.user.name}!</h1>
 					<img
 						src={session.user.image}
 						alt='avatar'
