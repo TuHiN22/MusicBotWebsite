@@ -37,14 +37,15 @@
 .welcome {
 	font-size: 2rem;
 	margin-bottom: 20px;
-	color: #ffffff; /* Màu chữ cho tiêu đề */
+	color: #ffffff;
+	font-family: "Roboto", sans-serif;
 }
 
 .info {
 	font-size: 1rem;
-
+	margin-top: 20px;
 	margin-bottom: 20px;
-	color: #ffffff; /* Màu chữ cho tiêu đề */
+	color: #ffffff;
 }
 
 .avatar {
@@ -54,6 +55,7 @@
 	margin: 0 auto;
 	display: block;
 	margin-bottom: 20px;
+	border: 2px solid #fff; /* Thêm viền cho avatar */
 }
 
 .signOutButton {
@@ -66,6 +68,7 @@
 	transition:
 		background-color 0.3s ease,
 		transform 0.3s ease;
+	font-family: "Roboto", sans-serif;
 }
 
 .signOutButton:hover {
@@ -73,82 +76,41 @@
 	transform: scale(1.05);
 }
 
-.loader,
-.loader:after {
-  border-radius: 50%;
-  width: 10em;
-  height: 10em;
-}
-.loader {
-  margin: 60px auto;
-  font-size: 10px;
-  position: relative;
-  text-indent: -9999em;
-  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-left: 1.1em solid #ffffff;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
-}
-@-webkit-keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-
 .nav {
 	display: flex;
 	justify-content: center;
-	color: #1c1c1c;
+	color: #ffffff;
 	align-items: center;
 	margin-top: 20px;
 }
 
 .nav select {
+	color: #3a3a3a;
 	margin-right: 10px;
 	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	background-color: #fff;
+	font-family: "Roboto", sans-serif;
 }
 
 .nav input[type="color"] {
 	margin-right: 10px;
-	border: 2px solid #ccc; /* Thêm viền cho input màu */
+	border: 2px solid #ccc;
 	border-radius: 5px;
-	width: 50px; /* Kích thước cố định cho input màu */
+	width: 50px;
 	height: 50px;
 	cursor: pointer;
 	transition: border-color 0.3s ease;
 }
 
 .nav input[type="color"]:hover {
-	border-color: #4caf50; /* Thay đổi màu viền khi hover */
+	border-color: #4caf50;
 }
 
 .nav button {
 	padding: 8px 15px;
-	background: linear-gradient(135deg, #4caf50, #45a049); /* Thêm hiệu ứng gradient */
+	background: linear-gradient(135deg, #4caf50, #45a049);
 	color: white;
 	border: none;
 	border-radius: 5px;
@@ -156,22 +118,27 @@
 	transition:
 		background 0.3s ease,
 		transform 0.2s ease;
+	font-family: "Roboto", sans-serif;
 }
 
 .nav button:hover {
-	background: linear-gradient(135deg, #45a049, #4caf50); /* Thay đổi gradient khi hover */
-	transform: scale(1.05); /* Tăng kích thước khi hover */
+	background: linear-gradient(135deg, #45a049, #4caf50);
+	transform: scale(1.05);
 }
 
-/* Thêm animation cho gradient background */
-@keyframes gradientAnimation {
+.updateStatus {
+	font-size: 1rem;
+	margin-top: 10px;
+	color: #ffffff;
+	font-family: "Roboto", sans-serif;
+	animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
 	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
+		opacity: 0;
 	}
 	100% {
-		background-position: 0% 50%;
+		opacity: 1;
 	}
 }
