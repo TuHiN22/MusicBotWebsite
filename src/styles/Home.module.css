@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 .container {
 	display: flex;
 	justify-content: center;
@@ -38,7 +40,7 @@
 	font-size: 2rem;
 	margin-bottom: 20px;
 	color: #ffffff;
-	font-family: "Roboto", sans-serif;
+	font-family: "Quicksand", sans-serif;
 }
 
 .info {
@@ -68,7 +70,8 @@
 	transition:
 		background-color 0.3s ease,
 		transform 0.3s ease;
-	font-family: "Roboto", sans-serif;
+	font-family: "Quicksand", sans-serif;
+	font-style: oblique;
 }
 
 .signOutButton:hover {
@@ -84,6 +87,46 @@
 	margin-top: 20px;
 }
 
+
+.loader,
+.loader:after {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  color: #a2b8be
+}
+.loader:after {
+  content: " ";
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6.4px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 .nav select {
 	color: #3a3a3a;
 	margin-right: 10px;
@@ -91,7 +134,7 @@
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	background-color: #fff;
-	font-family: "Roboto", sans-serif;
+	font-family: "Quicksand", sans-serif;
 }
 
 .nav input[type="color"] {
@@ -118,7 +161,7 @@
 	transition:
 		background 0.3s ease,
 		transform 0.2s ease;
-	font-family: "Roboto", sans-serif;
+	font-family: "Quicksand", sans-serif;
 }
 
 .nav button:hover {

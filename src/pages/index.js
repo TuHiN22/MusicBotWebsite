@@ -24,7 +24,7 @@ export default function Home() {
 
 	// Trong khi kiểm tra session, có thể hiển thị loading hoặc placeholder
 	if (status === "loading") {
-		return <div className={styles.loader}>Loading...</div>;
+		return <div className={styles.loader}></div>;
 	}
 
 	const handleUpdate = async () => {
