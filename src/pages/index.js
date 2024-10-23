@@ -12,7 +12,7 @@ export default function Home() {
 	// Chỉ thực hiện chuyển hướng khi đã render trên client-side
 	useEffect(() => {
 		if (status === "unauthenticated") {
-			router.push("/login");
+			router.push("/home");
 		} else if (session) {
 			// Lấy thông tin người dùng từ DB
 			fetch(`/api/user/getUser?userID=${session.user.id}`)
