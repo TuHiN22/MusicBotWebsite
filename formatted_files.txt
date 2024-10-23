@@ -1,8 +1,1 @@
-README.md
-components.json
-src/components/ui/button.jsx
-src/components/ui/card.jsx
-src/lib/utils.js
-src/styles/Home.module.css
-src/styles/globals.css
-tailwind.config.js
+formatted_files.txt
