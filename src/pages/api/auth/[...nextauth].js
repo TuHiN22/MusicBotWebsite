@@ -13,6 +13,14 @@ export default NextAuth({
 			authorization: { params: { scope: scopes } },
 		}),
 	],
+	logger: {
+		error(code, metadata) {
+			if (code === "OAUTH_CALLBACK_HANDLER_ERROR") {
+				console.log(`[${code}] ${metadata.error_description}`);
+			}
+		},
+	},
+
 	callbacks: {
 		async signIn({ user, account, profile }) {
 			user.id = profile.id;
