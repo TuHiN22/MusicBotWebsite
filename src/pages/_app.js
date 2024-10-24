@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 					rel='icon'
 					href='/favicon.png'
 				/>
-				<html lang='vi' />
 			</Head>
 			<Component {...pageProps} />
 		</SessionProvider>
