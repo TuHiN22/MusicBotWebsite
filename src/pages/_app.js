@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 				<title>Zi Dashboard</title>
 				<link
 					rel='icon'
-					href='/favicon.png'
+					href='https://avatars.githubusercontent.com/u/104454302'
 				/>
 			</Head>
 			<Component {...pageProps} />

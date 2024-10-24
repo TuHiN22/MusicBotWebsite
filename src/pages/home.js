@@ -1,10 +1,18 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Users, Server, Zap } from "lucide-react";
+import { Bot, Users, Server, Zap, MoonStar, Sun } from "lucide-react";
 import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 export default function DiscordBotLanding() {
+	const [isDarkMode, setIsDarkMode] = useState(false);
+
+	const toggleDarkMode = () => {
+		setIsDarkMode(!isDarkMode);
+		document.body.classList.toggle("dark", !isDarkMode);
+	};
+
 	return (
 		<div className='flex flex-col min-h-screen'>
 			<header className='px-4 lg:px-6 h-14 flex items-center'>
@@ -14,6 +22,20 @@ export default function DiscordBotLanding() {
 					<Bot className='h-6 w-6' />
 					<span className='sr-only'>Ziji Bot</span>
 				</Link>
+				<div className='ml-4'>
+					<Button
+						onClick={toggleDarkMode}
+						variant={isDarkMode ? "outline" : "default"}>
+						{isDarkMode ?
+							<>
+								<Sun className='h-4 w-4' /> Light mode
+							</>
+						:	<>
+								<MoonStar className='h-4 w-4' /> Dark Mode
+							</>
+						}
+					</Button>
+				</div>
 				<nav className='ml-auto flex gap-4 sm:gap-6'>
 					<Link
 						className='text-sm font-medium hover:underline underline-offset-4'
@@ -29,6 +51,11 @@ export default function DiscordBotLanding() {
 						className='text-sm font-medium hover:underline underline-offset-4'
 						href='#about'>
 						About
+					</Link>
+					<Link
+						className='text-sm font-medium hover:underline underline-offset-4'
+						href={"https://discord.com/oauth2/authorize?client_id=" + process.env.DISCORD_CLIENT_ID}>
+						Add Bot
 					</Link>
 				</nav>
 			</header>
