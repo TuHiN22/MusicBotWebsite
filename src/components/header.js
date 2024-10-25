@@ -63,7 +63,7 @@ export default function header() {
 				</Link>
 				{session && (
 					<div className='flex items-center'>
-						<h1 className='text-sm font-medium hover:underline underline-offset-4'>Welcome back, {session.user.name}!</h1>
+						<h1 className='text-sm font-medium hover:underline underline-offset-4'>{session.user.name}!</h1>
 						<div className='relative'>
 							{/* Avatar button */}
 							<button onClick={toggleDropdown}>

@@ -68,27 +68,24 @@ export default function Profile() {
 		}
 	};
 
+	useEffect(() => {
+		const handleBeforeUnload = (event) => {
+			event.preventDefault();
+			event.returnValue = ''; // This triggers the browser's confirmation dialog
+		};
+
+		window.addEventListener('beforeunload', handleBeforeUnload);
+
+		return () => {
+			window.removeEventListener('beforeunload', handleBeforeUnload);
+		};
+	}, []);
+
 	return (
 		<div className='flex flex-col min-h-screen'>
 			{session && (
 				<Layout>
 					<main className='flex-1'>
-						{/* Main content */}
-						<section className='w-full py-12 md:py-24 lg:py-32 xl:py-48'>
-							<div className='container px-4 md:px-6'>
-								<div className='flex flex-col items-center space-y-4 text-center'>
-									<div className='space-y-2'>
-										<h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none'>
-											Setting to Ziji Bot
-										</h1>
-										<p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
-											Enhance your Discord server with moderation, fun commands, and powerful integrations.
-										</p>
-									</div>
-								</div>
-							</div>
-						</section>
-
 						{/* User Settings */}
 						<section
 							id='setting'
@@ -100,7 +97,7 @@ export default function Profile() {
 									className='w-24 h-24 rounded-full mx-auto mb-5 border-2 border-white'
 								/>
 								<h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12'>
-									Setting for account {session.user.name}!
+									User profile
 								</h2>
 
 								<div className='grid gap-6 lg:grid-cols-3 lg:gap-12'>
@@ -113,7 +110,6 @@ export default function Profile() {
 											<select
 												value={userData?.lang}
 												onChange={(e) => setUserData({ ...userData, lang: e.target.value })}>
-												<option value=''>Chọn ngôn ngữ</option>
 												<option value='vi'>Tiếng Việt</option>
 												<option value='en'>English</option>
 											</select>
