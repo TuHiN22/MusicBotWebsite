@@ -71,13 +71,13 @@ export default function Profile() {
 	useEffect(() => {
 		const handleBeforeUnload = (event) => {
 			event.preventDefault();
-			event.returnValue = ''; // This triggers the browser's confirmation dialog
+			event.returnValue = ""; // This triggers the browser's confirmation dialog
 		};
 
-		window.addEventListener('beforeunload', handleBeforeUnload);
+		window.addEventListener("beforeunload", handleBeforeUnload);
 
 		return () => {
-			window.removeEventListener('beforeunload', handleBeforeUnload);
+			window.removeEventListener("beforeunload", handleBeforeUnload);
 		};
 	}, []);
 
@@ -96,9 +96,7 @@ export default function Profile() {
 									alt='avatar'
 									className='w-24 h-24 rounded-full mx-auto mb-5 border-2 border-white'
 								/>
-								<h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12'>
-									User profile
-								</h2>
+								<h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12'>User profile</h2>
 
 								<div className='grid gap-6 lg:grid-cols-3 lg:gap-12'>
 									{/* Language */}
