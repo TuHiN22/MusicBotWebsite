@@ -27,7 +27,7 @@ export default function header() {
 				<span className='sr-only'>Ziji Bot</span>
 			</Link>
 			<Link
-				className='flex ml-3 items-center justify-center'
+				className='flex ml-2 items-center justify-center'
 				href='#'>
 				{isDarkMode ?
 					<Sun
