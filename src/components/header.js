@@ -58,7 +58,7 @@ export default function header() {
 				</Link>
 				<Link
 					className='text-sm font-medium hover:underline underline-offset-4'
-					href={"https://discord.com/oauth2/authorize?client_id=" + process.env.DISCORD_CLIENT_ID}>
+					href='https://discord.com/oauth2/authorize?client_id=1005716197259612193'>
 					Add Bot
 				</Link>
 				{session && (
