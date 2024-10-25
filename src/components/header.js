@@ -1,13 +1,21 @@
 import Link from "next/link";
-import { Bot, Moon, Sun } from "lucide-react";
+import { Bot, Moon, Sun, LogOut } from "lucide-react";
 import { useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 
 export default function header() {
 	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
+
+	const { data: session, status } = useSession();
 
 	const toggleDarkMode = () => {
 		setIsDarkMode(!isDarkMode);
 		document.body.classList.toggle("dark", !isDarkMode);
+	};
+
+	const toggleDropdown = () => {
+		setIsOpen(!isOpen);
 	};
 
 	return (
@@ -32,7 +40,7 @@ export default function header() {
 					/>
 				}
 			</Link>
-			<nav className='ml-auto flex gap-4 sm:gap-6'>
+			<nav className='ml-auto flex gap-4 sm:gap-6 items-center'>
 				<Link
 					className='text-sm font-medium hover:underline underline-offset-4'
 					href='#features'>
@@ -53,6 +61,36 @@ export default function header() {
 					href={"https://discord.com/oauth2/authorize?client_id=" + process.env.DISCORD_CLIENT_ID}>
 					Add Bot
 				</Link>
+				{session && (
+					<div className='flex items-center'>
+						<h1 className='text-sm font-medium hover:underline underline-offset-4'>Welcome back, {session.user.name}!</h1>
+						<div className='relative'>
+							{/* Avatar button */}
+							<button onClick={toggleDropdown}>
+								<img
+									src={session.user.image}
+									alt='avatar'
+									className='w-10 h-10 rounded-lg ml-2 border-2 border-white'
+								/>
+							</button>
+
+							{/* Dropdown menu */}
+							{isOpen && (
+								<div className='absolute right-0 mt-2 w-48 rounded-lg shadow-lg'>
+									<ul className='text-sm'>
+										{/* <li className='px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center'>My Profile</li>
+										<li className='px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center'>Settings</li> */}
+										<li
+											className='px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center'
+											onClick={signOut}>
+											<LogOut className='h-6 w-6 mr-2' /> Log out
+										</li>
+									</ul>
+								</div>
+							)}
+						</div>
+					</div>
+				)}
 			</nav>
 		</header>
 	);

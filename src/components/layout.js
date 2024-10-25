@@ -14,7 +14,6 @@ const Layout = ({ children }) => {
 	}, []);
 
 	const checkScrollTop = () => {
-		console.log(window.scrollY);
 		if (!showScroll && window.scrollY > 400) {
 			setShowScroll(true);
 		} else {
