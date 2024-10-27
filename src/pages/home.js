@@ -30,7 +30,7 @@ export default function DiscordBotLanding() {
 									<Button
 										variant='outline'
 										asChild>
-										<Link href='#features'>Learn More</Link>
+										<Link href='/docs/general/getting-started'>Documentation</Link>
 									</Button>
 								</div>
 							</div>
