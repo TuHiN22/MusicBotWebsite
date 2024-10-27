@@ -12,8 +12,8 @@ export default function Footer() {
 				</Link>
 				<Link
 					className='text-xs hover:underline underline-offset-4'
-					href='https://github.com/zijipia/Ziji-bot-discord?tab=MIT-1-ov-file'>
-					License
+					href='/docs/general/getting-started'>
+					Documentation
 				</Link>
 			</nav>
 		</footer>

@@ -20,6 +20,8 @@
 		"mongoose": "^8.7.2",
 		"next": "14.2.15",
 		"next-auth": "^4.24.8",
+		"nextra": "^3.1.1",
+		"nextra-theme-docs": "^3.1.1",
 		"react": "^18",
 		"react-dom": "^18",
 		"tailwind-merge": "^2.5.4",
