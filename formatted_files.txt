@@ -1,1 +1,2 @@
 formatted_files.txt
+theme.config.jsx
