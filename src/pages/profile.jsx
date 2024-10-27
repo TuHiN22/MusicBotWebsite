@@ -84,40 +84,44 @@ export default function Component() {
 		};
 	}, []);
 
-	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-	const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
-  
+	const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
 	return (
-	  <div className="flex h-screen bg-gray-100">
-		{/* Sidebar */}
-		<div className={`${isSidebarOpen ? 'block' : 'hidden'} md:block fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0`}>
-		  <div className="p-4 bg-indigo-600 flex justify-between items-center">
-			<h1 className="text-2xl font-bold">Ziji Bot</h1>
-			<button
-			  onClick={toggleSidebar}
-			  className="md:hidden text-white hover:text-gray-200"
-			>
-			  <X className="h-6 w-6" />
-			</button>
-		  </div>
-		  <nav className="mt-4">
-			<a href="#" className="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-800">
-			  <User className="mr-3" />
-			  Profile
-			</a>
-		  </nav>
-		</div>
+		<div className='flex h-screen bg-gray-100'>
+			{/* Sidebar */}
+			<div
+				className={`${isSidebarOpen ? "block" : "hidden"} md:block fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:translate-x-0`}>
+				<div className='p-4 bg-indigo-600 flex justify-between items-center'>
+					<h1 className='text-2xl font-bold'>Ziji Bot</h1>
+					<button
+						onClick={toggleSidebar}
+						className='md:hidden text-white hover:text-gray-200'>
+						<X className='h-6 w-6' />
+					</button>
+				</div>
+				<nav className='mt-4'>
+					<a
+						href='#'
+						className='flex items-center px-4 py-2 text-gray-300 hover:bg-gray-800'>
+						<User className='mr-3' />
+						Profile
+					</a>
+				</nav>
+			</div>
 
 			{/* Main content */}
 			<div className='flex-1 overflow-auto'>
 				<header className='bg-white shadow'>
 					<div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
-						<div className="flex items-center">
-							<button onClick={toggleSidebar} className="mr-4 md:hidden">
-                				<Menu className="h-6 w-6 text-gray-500" />
-              				</button>
-              				<h1 className="text-3xl font-bold text-gray-900">Profile settings</h1>
+						<div className='flex items-center'>
+							<button
+								onClick={toggleSidebar}
+								className='mr-4 md:hidden'>
+								<Menu className='h-6 w-6 text-gray-500' />
+							</button>
+							<h1 className='text-3xl font-bold text-gray-900'>Profile settings</h1>
 						</div>
 						<div className='flex items-center'>
 							<span className='mr-4 text-gray-600'>{session?.user?.name || "Username"}</span>

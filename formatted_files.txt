@@ -1,1 +1,2 @@
 formatted_files.txt
+src/pages/profile.jsx
