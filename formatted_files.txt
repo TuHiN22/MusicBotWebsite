@@ -1,4 +1,1 @@
 formatted_files.txt
-src/pages/docs/command/_meta.js
-src/pages/docs/command/image.md
-src/pages/docs/command/music.md
