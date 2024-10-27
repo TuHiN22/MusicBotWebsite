@@ -1,1 +1,9 @@
 formatted_files.txt
+next.config.mjs
+src/pages/_meta.js
+src/pages/docs/_meta.js
+src/pages/docs/command/help.md
+src/pages/docs/general/_meta.js
+src/pages/docs/general/faq.md
+src/pages/docs/general/getting-started.md
+theme.config.jsx

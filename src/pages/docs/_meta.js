@@ -1,4 +1,4 @@
 export default {
-    'general': 'General',
-    'command': 'Commands List'
-}
+	general: "General",
+	command: "Commands List",
+};
