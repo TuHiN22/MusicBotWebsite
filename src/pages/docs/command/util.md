@@ -5,6 +5,8 @@
 - `/help`: Show help panel
 - `/staticis`: View information about the system
 - `/ping`: Show the bot's latency
+- `/translate`: Translate any language
+- `/weather`: Check the weather
 
 ## Usage
 
@@ -12,4 +14,6 @@
 /help
 /staticis
 /ping
+/translate
+/weather
 ```
