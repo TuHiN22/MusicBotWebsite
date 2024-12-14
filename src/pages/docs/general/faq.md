@@ -2,7 +2,7 @@
 
 ## How can I add bot to my server?
 
-You can add the bot by visiting [this link](https://discord.com/oauth2/authorize?client_id=1005716197259612193).
+You can add the bot by visiting [this link](https://discord.com/oauth2/authorize?client_id=888287369084686406).
 
 ## Why bot commands don't appear?
 
