@@ -22,13 +22,13 @@ export default function header() {
 		<header className='px-4 lg:px-6 h-14 flex items-center'>
 			<Link
 				className='flex items-center justify-center'
-				href='#'>
+				href='https://discord.com/oauth2/authorize?client_id=888287369084686406'>
 				<Bot className='h-6 w-6' />
 				<span className='sr-only'>BLOODiCE MuSiC Bot</span>
 			</Link>
 			<Link
 				className='flex ml-2 items-center justify-center'
-				href='https://discord.com/oauth2/authorize?client_id=888287369084686406'>
+				href='#'>
 				{isDarkMode ?
 					<Sun
 						className='h-6 w-6'
