@@ -24,11 +24,11 @@ export default function header() {
 				className='flex items-center justify-center'
 				href='#'>
 				<Bot className='h-6 w-6' />
-				<span className='sr-only'>Ziji Bot</span>
+				<span className='sr-only'>BLOODiCE MuSiC Bot</span>
 			</Link>
 			<Link
 				className='flex ml-2 items-center justify-center'
-				href='#'>
+				href='https://discord.com/oauth2/authorize?client_id=888287369084686406'>
 				{isDarkMode ?
 					<Sun
 						className='h-6 w-6'
